@@ -46,7 +46,7 @@ export const metadata: Metadata = {
       "GroupSora",
     description:
       "Discover and join thousand of WhatsApp, Telegram, and Instagram groups. Find groups for trading, study, gaming, jobs, hobbies, and more on GroupSora.",
-    url: "https://groupsora.com",
+    url: "https://groupsora.vercel.app",
     siteName: "GroupSora",
     locale: "en-US",
     type: "website",

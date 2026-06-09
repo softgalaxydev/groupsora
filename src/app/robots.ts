@@ -7,6 +7,6 @@ export default function robots() {
     },
 
     sitemap:
-      "https://yourwebsite.com/sitemap.xml",
+      "https://groupsora.vercel.app/sitemap.xml",
   };
 }

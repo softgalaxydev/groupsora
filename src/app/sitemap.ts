@@ -9,18 +9,18 @@ export default async function sitemap() {
 
   const groupUrls =
     groups?.map((group) => ({
-      url: `https://yourwebsite.com/group/${group.slug}`,
+      url: `https://groupsora.vercel.app/group/${group.slug}`,
       lastModified: new Date(),
     })) || [];
 
   return [
     {
-      url: "https://yourwebsite.com",
+      url: "https://groupsora.vercel.app",
       lastModified: new Date(),
     },
 
     {
-      url: "https://yourwebsite.com/add-group",
+      url: "https://groupsora.vercel.app/add-group",
       lastModified: new Date(),
     },
 
