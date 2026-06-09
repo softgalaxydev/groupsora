@@ -6,6 +6,8 @@ import Navbar from "@/app/components/Navbar";
 import ShareButton from "@/app/components/ShareButton";
 import Footer from "@/app/components/Footer";
 
+export const dynamic = "force-dynamic";
+
 type Props = {
   params: Promise<{
     slug: string;

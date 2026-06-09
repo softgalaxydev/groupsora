@@ -2,6 +2,8 @@ import Navbar from "@/app/components/Navbar";
 import GroupCard from "@/app/components/GroupCard";
 import { supabase } from "@/lib/supabase";
 
+export const dynamic = "force-dynamic";
+
 type Props = {
   params: Promise<{
     type: string;
