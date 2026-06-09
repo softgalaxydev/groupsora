@@ -65,6 +65,7 @@ export default function RootLayout({
     >
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="google-site-verification" content="EEBEe2MypCHyqhMoTdnmeVCalmHD8yZjAy6wbKw30XQ" />
       </head>
       <body className="min-h-full flex flex-col">
         <Toaster/>
