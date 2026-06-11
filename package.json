@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "groupsora",
   "version": "0.1.0",
   "private": true,
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.106.1",
+    "browser-image-compression": "^2.0.2",
     "cheerio": "^1.2.0",
     "next": "16.2.7",
     "nodemailer": "^8.0.8",
@@ -30,3 +31,4 @@
     "typescript": "^5"
   }
 }
+

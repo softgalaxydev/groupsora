@@ -95,6 +95,8 @@ export default function GroupCard({
   src={imgError ? fallbackImage : (imageUrl || fallbackImage)}
   alt={title}
   onError={() => setImgError(true)}
+  loading="lazy"
+  decoding="async"
   className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl object-cover border border-zinc-100 shadow-inner"
 />
         </Link>

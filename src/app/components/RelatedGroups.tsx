@@ -28,7 +28,7 @@ export default function RelatedGroups({ groups }: Props) {
   if (!groups || groups.length === 0) return null;
 
   return (
-    <div className="max-w-4xl mx-auto mt-12">
+    <div id="related-groups" className="max-w-4xl mx-auto mt-12">
       <h2 className="text-xl font-bold text-zinc-800 mb-6 flex items-center gap-2 select-none">
         <span className="h-5 w-1 bg-green-600 rounded-full"></span>
         Related Groups

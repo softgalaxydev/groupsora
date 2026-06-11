@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+﻿import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -36,7 +36,7 @@ export default function PrivacyPage() {
               Privacy Policy
             </h1>
             <p className="text-gray-900 text-lg md:text-xl font-normal max-w-3xl leading-relaxed">
-              At GroupSora, your privacy is our highest priority. This policy outlines how we handle, protect, and use the information gathered across our platform.
+              At Groupsora, your privacy is our highest priority. This policy outlines how we handle, protect, and use the information gathered across our platform.
             </p>
           </div>
 
@@ -66,7 +66,7 @@ export default function PrivacyPage() {
               {/* TL;DR Quick Summary Box */}
               <div className="bg-linear-to-br from-green-50/70 to-emerald-50/30 border border-green-100 rounded-2xl p-6 md:p-8 shadow-sm">
                 <h3 className="text-lg font-bold text-green-900 flex items-center gap-2 mb-3">
-                  💡 Privacy Highlights (TL;DR)
+                  ðŸ’¡ Privacy Highlights (TL;DR)
                 </h3>
                 <p className="text-green-800 text-sm leading-relaxed font-normal">
                   We collect basic server logs, browser type, and details you actively submit when listing a social group. <strong>We do not sell your personal data</strong>. Any group link, title, or description you publish here is completely <strong>public</strong> and accessible to anyone. We advise users not to publish private phone numbers or personal information.
@@ -82,10 +82,10 @@ export default function PrivacyPage() {
                   </h2>
                   <div className="space-y-4">
                     <p>
-                      At GroupSora, accessible through our platform, protecting the privacy of our visitors and users is one of our core values. This Privacy Policy documents the types of information we collect, record, process, and protect while you navigate our community index.
+                      At Groupsora, accessible through our platform, protecting the privacy of our visitors and users is one of our core values. This Privacy Policy documents the types of information we collect, record, process, and protect while you navigate our community index.
                     </p>
                     <p>
-                      By accessing, browsing, or using GroupSora, you explicitly consent to the data practices outlined in this Privacy Policy. If you do not agree with the terms listed, you must immediately cease accessing our website and related services.
+                      By accessing, browsing, or using Groupsora, you explicitly consent to the data practices outlined in this Privacy Policy. If you do not agree with the terms listed, you must immediately cease accessing our website and related services.
                     </p>
                   </div>
                 </section>
@@ -97,7 +97,7 @@ export default function PrivacyPage() {
                   </h2>
                   <div className="space-y-4">
                     <p>
-                      GroupSora collects information both automatically and voluntarily to provide a secure and functional catalog.
+                      Groupsora collects information both automatically and voluntarily to provide a secure and functional catalog.
                     </p>
                     <p className="font-semibold text-gray-800">The categories of information we gather include:</p>
                     <ul className="list-disc pl-6 space-y-2 text-gray-600">
@@ -124,7 +124,7 @@ export default function PrivacyPage() {
                     </p>
                     <p className="font-semibold text-gray-800">Specifically, your data is used for:</p>
                     <ul className="list-disc pl-6 space-y-2 text-gray-600">
-                      <li>Operating, developing, and upgrading the GroupSora platform.</li>
+                      <li>Operating, developing, and upgrading the Groupsora platform.</li>
                       <li>Reviewing and certifying submitted group links to prevent scams.</li>
                       <li>Anonymously measuring traffic metrics to understand user preferences.</li>
                       <li>Identifying and blocking malicious traffic, spam, DDoS attempts, and bots.</li>
@@ -141,7 +141,7 @@ export default function PrivacyPage() {
                   </h2>
                   <div className="space-y-4">
                     <p>
-                      GroupSora utilizes standard cookies, local browser storage, and pixel tags to customize your browsing session. Cookies help us keep you logged in, remember your search options, and analyze website speed performance.
+                      Groupsora utilizes standard cookies, local browser storage, and pixel tags to customize your browsing session. Cookies help us keep you logged in, remember your search options, and analyze website speed performance.
                     </p>
                     <p>
                       You can choose to disable or block cookies through your individual browser settings. However, disabling cookies may limit your ability to use certain features or maintain active preferences on our Platform.
@@ -156,13 +156,13 @@ export default function PrivacyPage() {
                   </h2>
                   <div className="space-y-4">
                     <p>
-                      Third-party ad networks and ad servers may display promotions on GroupSora. These ad networks automatically receive your IP address when advertisements are rendered on your device.
+                      Third-party ad networks and ad servers may display promotions on Groupsora. These ad networks automatically receive your IP address when advertisements are rendered on your device.
                     </p>
                     <p>
-                      Google is one of our third-party vendors. It uses DART cookies to serve contextual advertisements to our users based on their visits to GroupSora and other internet domains. You may choose to opt-out of Google’s ad cookies by visiting the Google Ad Network Privacy Policy.
+                      Google is one of our third-party vendors. It uses DART cookies to serve contextual advertisements to our users based on their visits to Groupsora and other internet domains. You may choose to opt-out of Googleâ€™s ad cookies by visiting the Google Ad Network Privacy Policy.
                     </p>
                     <p>
-                      Please note that GroupSora has no control or access to the tracking cookies used by third-party advertisers.
+                      Please note that Groupsora has no control or access to the tracking cookies used by third-party advertisers.
                     </p>
                   </div>
                 </section>
@@ -174,7 +174,7 @@ export default function PrivacyPage() {
                   </h2>
                   <div className="space-y-4">
                     <p>
-                      GroupSora indexes chat groups on external platforms (WhatsApp, Telegram, etc.). Once you click on a group card and leave our website, our Privacy Policy is no longer in effect.
+                      Groupsora indexes chat groups on external platforms (WhatsApp, Telegram, etc.). Once you click on a group card and leave our website, our Privacy Policy is no longer in effect.
                     </p>
                     <p>
                       We do not control the privacy practices, chat histories, data collections, or member activities within external channels. We strongly recommend reading the privacy policies of the respective chat applications and external platforms before joining any group.
@@ -210,10 +210,10 @@ export default function PrivacyPage() {
                   </h2>
                   <div className="space-y-4">
                     <p>
-                      Protecting young children online is a fundamental priority for us. GroupSora does not knowingly collect or store any personal identifiable information from children under the age of 13.
+                      Protecting young children online is a fundamental priority for us. Groupsora does not knowingly collect or store any personal identifiable information from children under the age of 13.
                     </p>
                     <p>
-                      If you are a parent or legal guardian and discover that your child has submitted public group details or contact information on GroupSora, please contact us immediately. We will take swift steps to purge the requested information from our servers.
+                      If you are a parent or legal guardian and discover that your child has submitted public group details or contact information on Groupsora, please contact us immediately. We will take swift steps to purge the requested information from our servers.
                     </p>
                   </div>
                 </section>
@@ -240,7 +240,7 @@ export default function PrivacyPage() {
                   </h2>
                   <div className="space-y-4">
                     <p>
-                      GroupSora reserves the right to modify, add to, or replace this Privacy Policy at any time without prior notice. 
+                      Groupsora reserves the right to modify, add to, or replace this Privacy Policy at any time without prior notice. 
                     </p>
                     <p>
                       Any modifications take effect immediately upon being published on this page. We encourage you to check this page frequently to stay informed about how we safeguard your privacy.
@@ -261,7 +261,7 @@ export default function PrivacyPage() {
                       href="/contact"
                       className="inline-block mt-4 bg-green-600 hover:bg-green-700 text-white px-8 py-3.5 rounded-xl font-semibold shadow-md active:scale-[0.98] transition-all"
                     >
-                      ✉️ Open Privacy Request
+                      âœ‰ï¸ Open Privacy Request
                     </Link>
                   </div>
                 </section>

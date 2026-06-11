@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -18,10 +18,10 @@ export default function Navbar() {
         onClick={() => setOpenMenu(true)}
         className="text-3xl p-2 -m-2 cursor-pointer select-none touch-manipulation active:opacity-70 transition flex items-center justify-center min-w-11 min-h-11"
       >
-        ☰
+        â˜°
       </button>
       <h1 className="text-2xl font-bold">
-        GroupSora
+        Groupsora
       </h1>
       </div>
 
@@ -69,7 +69,7 @@ rounded-2xl
       <div className="flex items-center justify-between">
 
         <h2 className="text-2xl font-bold">
-          GroupSora
+          Groupsora
         </h2>
 
         <button
@@ -92,7 +92,7 @@ rounded-2xl
           min-h-11
         "
         >
-          ×
+          Ã—
         </button>
 
       </div>
@@ -113,7 +113,7 @@ rounded-2xl
           font-medium
           "
         >
-          🏠 Dashboard
+          ðŸ  Dashboard
         </Link>
 
         <Link
@@ -129,7 +129,7 @@ rounded-2xl
           font-medium
         "
         >
-          ➕ Add Group
+          âž• Add Group
         </Link>
 
         <Link
@@ -145,7 +145,7 @@ rounded-2xl
           font-medium
         "
         >
-          📜 Terms & Conditions
+          ðŸ“œ Terms & Conditions
         </Link>
 
         <Link
@@ -161,7 +161,7 @@ rounded-2xl
           font-medium
         "
         >
-          🔒 Privacy
+          ðŸ”’ Privacy
         </Link>
 
         <Link
@@ -177,7 +177,7 @@ rounded-2xl
           font-medium
         "
         >
-          ⚠️ Disclaimer
+          âš ï¸ Disclaimer
         </Link>
 
         <Link
@@ -193,7 +193,7 @@ rounded-2xl
           font-medium
         "
         >
-          📞 Contact Us
+          ðŸ“ž Contact Us
         </Link>
 
       </div>

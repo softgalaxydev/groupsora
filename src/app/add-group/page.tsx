@@ -6,6 +6,7 @@ import { supabase } from "@/lib/supabase";
 import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import { groupTypes, countries, languages } from "@/app/data/constants";
+import imageCompression from "browser-image-compression";
 
 export default function AddGroupPage() {
   const [loadingMeta, setLoadingMeta] = useState(false);
@@ -134,13 +135,70 @@ else if (
     }
 
     let finalImageUrl = imageUrl;
+    
+    // Auto fetched image ko storage me save karo
+      if (!image && imageUrl) {
+  try {
+    const response = await fetch(imageUrl);
+    const blob = await response.blob();
+
+    const file = new File(
+      [blob],
+      "auto-image.jpg",
+      { type: blob.type }
+    );
+
+    const compressedFile =
+      await imageCompression(file, {
+        maxSizeMB: 0.05,      // 80 KB target 0.05 for 50kb 
+        maxWidthOrHeight: 400,
+        useWebWorker: true,
+      });
+
+    const fileName =
+      `auto-${Date.now()}.jpg`;
+
+    const { error } =
+      await supabase.storage
+        .from("group-images")
+        .upload(
+          fileName,
+          compressedFile
+        );
+
+    if (!error) {
+      const { data } =
+        supabase.storage
+          .from("group-images")
+          .getPublicUrl(fileName);
+
+      finalImageUrl =
+        data.publicUrl;
+    }
+  } catch (err) {
+    console.log(
+      "Auto image upload failed",
+      err
+    );
+  }
+  }
 
     if (image) {
-      const fileName = `${Date.now()}-${image.name}`;
 
-      const { error } = await supabase.storage
-        .from("group-images")
-        .upload(fileName, image);
+  const compressedFile =
+    await imageCompression(image, {
+      maxSizeMB: 0.08,
+      maxWidthOrHeight: 400,
+      useWebWorker: true,
+    });
+
+  const fileName =
+    `${Date.now()}-${compressedFile.name}`;
+
+  const { error } =
+    await supabase.storage
+      .from("group-images")
+      .upload(fileName, compressedFile);
 
       if (error) {
         toast.error("Image upload failed");

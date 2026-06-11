@@ -33,16 +33,44 @@ export async function generateMetadata({
     };
   }
 
+  const title = `${group.title} - Join Best ${group.platform} Group | Groupsora`;
+  const description = group.description || `Join ${group.title} on ${group.platform}. Best for ${group.category}. ${group.group_type || ""} group.`;
+  const imageUrl = group.image_url || "https://groupsora.vercel.app/icon.png";
+  const pageUrl = `https://groupsora.vercel.app/group/${slug}`;
+
   return {
-    title: `${group.title} | Link House`,
-    description: group.description,
+    title: title,
+    description: description,
     keywords: [
       group.title,
       group.category,
       group.platform,
-      "WhatsApp group",
-      "Telegram group",
+      `${group.platform} groups`,
+      `${group.category} groups`,
+      group.group_type,
+      group.country,
+      "group links",
+      "join groups",
     ],
+    authors: [{ name: "Groupsora" }],
+    openGraph: {
+      title: title,
+      description: description,
+      url: pageUrl,
+      type: "website",
+      images: {
+        url: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: group.title,
+      },
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      images: [imageUrl],
+    },
   };
 }
 
@@ -60,14 +88,6 @@ export default async function GroupPage({
     .eq("status", "approved")
     .single();
 
-  // Related Groups
-  const { data: relatedGroups } = await supabase
-    .from("groups")
-    .select("*")
-    .neq("slug", slug)
-    .eq("status", "approved")
-    .limit(30);
-
   if (!group) {
     return (
       <div className="p-10 text-center text-2xl text-black">
@@ -75,6 +95,15 @@ export default async function GroupPage({
       </div>
     );
   }
+
+  // Related Groups
+  const { data: relatedGroups } = await supabase
+    .from("groups")
+    .select("*")
+    .neq("slug", slug)
+    .eq("status", "approved")
+    .eq("category", group.category)
+    .limit(30);
 
   const isWhatsapp = group.platform.toLowerCase() === "whatsapp";
   const isTelegram = group.platform.toLowerCase() === "telegram";
@@ -114,6 +143,30 @@ export default async function GroupPage({
     <>
       <Navbar />
       <main className="min-h-screen bg-zinc-50/50 pt-5 pb-16 px-4 sm:px-6 lg:px-8">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Thing",
+              name: group.title,
+              description: group.description,
+              image: group.image_url || "https://groupsora.vercel.app/icon.png",
+              url: `https://groupsora.vercel.app/group/${slug}`,
+              category: group.category,
+              inLanguage: group.language,
+              locationCreated: {
+                "@type": "Country",
+                name: group.country,
+              },
+              isPartOf: {
+                "@type": "WebSite",
+                name: "Groupsora",
+                url: "https://groupsora.vercel.app",
+              },
+            }),
+          }}
+        />
         <div className="max-w-4xl mx-auto">
 
           
@@ -125,6 +178,9 @@ export default async function GroupPage({
               <img
                 src={group.image_url || "https://images.unsplash.com/photo-1522202176988-66273c2fd55f"}
                 alt={group.title}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/55 via-black/10 to-transparent"></div>
@@ -183,6 +239,18 @@ export default async function GroupPage({
                   {group.description || "No description provided."}
                 </p>
               </div>
+
+              {group.group_type && (
+                <div className="mt-4 text-sm text-zinc-600">
+                  Want more {group.group_type} groups?{' '}
+                  <Link
+                    href={`/groups/${encodeURIComponent(group.group_type)}`}
+                    className="font-semibold text-indigo-600 hover:text-indigo-800"
+                  >
+                    See all {group.group_type} groups
+                  </Link>
+                </div>
+              )}
 
               {/* TAGS SECTION */}
               {group.tags && (
