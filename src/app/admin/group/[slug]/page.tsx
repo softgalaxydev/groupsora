@@ -102,22 +102,40 @@ export default function AdminGroupPreviewPage({ params }: Props) {
   };
 
   const deleteGroup = async () => {
-    if (!group) return;
-    if (!confirm("Are you sure you want to delete this group permanently?")) return;
+  if (!group) return;
 
-    const { error } = await supabase
-      .from("groups")
-      .delete()
-      .eq("id", group.id);
+  if (
+    !confirm("Are you sure you want to delete this group permanently?")
+  )
+    return;
 
-    if (error) {
-      toast.error("Failed to delete group");
-      return;
-    }
+  const imagePath =
+    group.image_url?.split("/group-images/")[1];
 
-    toast.success("Group deleted successfully");
-    router.push("/admin");
-  };
+
+    
+  if (imagePath) {
+  await supabase.storage
+    .from("group-images")
+    .remove([imagePath]);
+}
+
+
+
+
+  const { error } = await supabase
+    .from("groups")
+    .delete()
+    .eq("id", group.id);
+
+  if (error) {
+    toast.error("Failed to delete group");
+    return;
+  }
+
+  toast.success("Group deleted successfully");
+  router.push("/admin");
+};
 
   if (loading) {
     return (

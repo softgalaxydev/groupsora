@@ -62,21 +62,39 @@ export default function AdminPage() {
 
   // Delete group
   const deleteGroup = async (id: number) => {
-    if (!confirm("Are you sure you want to delete this group?")) return;
+  if (!confirm("Are you sure you want to delete this group?")) return;
 
-    const { error } = await supabase
-      .from("groups")
-      .delete()
-      .eq("id", id);
+  const group = groups.find((g) => g.id === id);
 
-    if (error) {
-      toast.error("Failed to delete");
-      return;
-    }
+  if (!group) return;
 
-    toast.success("Group deleted");
-    fetchGroups();
-  };
+  const imagePath =
+    group.image_url?.split("/group-images/")[1];
+
+
+
+    
+  if (imagePath) {
+  await supabase.storage
+    .from("group-images")
+    .remove([imagePath]);
+}
+
+
+
+  const { error } = await supabase
+    .from("groups")
+    .delete()
+    .eq("id", id);
+
+  if (error) {
+    toast.error("Failed to delete");
+    return;
+  }
+
+  toast.success("Group deleted");
+  fetchGroups();
+};
 
   // Logout
   const handleLogout = async () => {

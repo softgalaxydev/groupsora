@@ -6,10 +6,9 @@ export default function Footer() {
       <div className="max-w-4xl mx-auto flex flex-col items-center gap-4">
         
         <p className="text-xs text-zinc-500 mt-2">
-          Â© 2026 Groupsora. All rights reserved.
+          © 2026 GroupSora. All rights reserved.
         </p>
       </div>
     </footer>
   );
 }
-
